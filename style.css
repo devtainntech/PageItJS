@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flexbox;
+}
+
+#filterArea {
+    width: 100%;
+    justify-content: space-between;
+    background-color: #ccc;
+    padding: 12px 6px;
+    z-index: 10001;
+    display: flex;
+    position: fixed;
+}
+
+#filterArea form {
+    width: 100% !important;
+    display: flex;
+}
+
+#filterArea form * {
+    margin-right: 6px
+}
+
+document {
+    /* background-color: #98d9ff;   */
+    background: linear-gradient(135deg, #ABDCFF, #4fb6ff);
+    display: block;
+    padding: .5cm;
+}
+
+page {
+    border: 1px solid rgb(105, 105, 105);
+    box-shadow: 2px 2px 6px rgba(112, 112, 112, 0.692);
+    display: block;
+    margin: 6mm auto;
+    position: relative;
+    background-color: white;
+    font-size: 10pt;
+}
+
+page.a4 {
+    width: 210mm !important;
+    height: 297mm !important;
+    padding: 10mm !important;
+}
+
+docHeader {
+    display: block;
+    border-bottom: 1px dashed #555;
+    margin-bottom: 24px;
+}
+
+table.pageData {
+    width: 100%;
+    margin: 5mm 0;
+    border-spacing: 0;
+}
+
+.pageData tbody {
+    border: 1px dashed #bbb;
+}
+
+thead tr th {
+    padding: 1mm 2mm;
+    background-color: orange;
+    margin: 0;
+}
+
+th {
+    text-align: left;
+}
+
+tbody tr {
+    line-height: 24px;
+    border-bottom: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background: #efefef
+}
+
+tfoot tr:first-child {
+    margin-top: 24px;
+}
+
+td.currency,
+th.currency {
+    text-align: right;
+}
+
+td.currency::before {
+    content: '\20B9';
+    margin-right: 12px;
+    font-size: .8rem;
+}
+
+docNav {
+    margin: 0 auto;
+    background-color: rgb(80, 80, 80);
+    color: white;
+    font-size: 12pt;
+    position: fixed;
+    bottom: 0;
+    padding: 12px 24px;
+}
+
+@media print {
+    page.a4,
+    body {
+        width: 210mm;
+        height: 297mm;
+        padding: 0 !important;
+        margin: 0;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    #filterArea {
+        display: none !important;
+    }
+    table {
+        page-break-after: auto;
+        table-layout: fixed;
+    }
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto
+    }
+    td {
+        page-break-inside: avoid;
+        page-break-after: auto
+    }
+    thead {
+        display: table-header-group
+    }
+    tfoot {
+        display: table-footer-group
+    }
+}

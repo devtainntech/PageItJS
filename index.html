@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>report</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section id="filterArea">
+        <!--[if lt IE 7]>
+        <p class="browsehappy">
+          You are using an <strong>outdated</strong> browser. Please
+          <a href="#">upgrade your browser</a> to improve your experience.
+        </p>
+      <![endif]-->
+        <form action="" method="POST">
+            <label for="account">Account : &nbsp;</label>
+            <select name="account" id="account">
+          <option value="1">Assets</option>
+          <option value="2">Stockholders equity</option>
+          <option value="3">Liability</option>
+          <option value="4" selected>Operating Revenues</option>
+          <option value="5">Operating Expenses</option>
+          <option value="6">Non-operating revenues and gains</option>
+          <option value="7">Non-operating expenses and losses</option>
+          <option value="8">Cash</option>
+          <option value="9">Bank accounts</option>
+          <option value="10">Account receivables</option>
+          <option value="11">Inventory</option>
+          <option value="12">Land</option>
+          <option value="13">Buildings Asset</option>
+          <option value="14">Equipment</option>
+          <option value="15">Vehicles</option>
+          <option value="16">Furniture and fixtures</option>
+          <option value="17">Cards</option>
+          <option value="18">Accounts payables</option>
+          <option value="19">Interest payable</option>
+          <option value="23">Stockholder capital</option>
+          <option value="24">Sales revenues</option>
+          <option value="25">Service revenues</option>
+          <option value="26">Fees earned</option>
+          <option value="27">Cost of goods sold</option>
+          <option value="28">Salaries expense</option>
+          <option value="29">Fringe benefit expense</option>
+          <option value="30">Rental expense</option>
+          <option value="31">EB bill</option>
+          <option value="32">Water bill</option>
+          <option value="33">Phone bill</option>
+          <option value="34">Internet bill</option>
+          <option value="35">Fuel - Operating expense</option>
+          <option value="36">Toll - Operating expense</option>
+          <option value="37">Vehicle service</option>
+          <option value="38">Other trip expenses</option>
+          <option value="39">Bank service charges</option>
+          <option value="40">Employee petty cash</option>
+        </select>
+            <div class="col">From : &nbsp;<input type="date" /></div>
+            <div class="col">To : &nbsp;<input type="date" /></div>
+            <button type="submit">Go</button>
+        </form>
+        <div id="zoomFactor" style="display: flex">
+            <span>zoom&nbsp;&nbsp;</span>
+            <select id="zooming" onchange="zoomings()">
+          <option value=".25">25%</option>
+          <option value=".5">50%</option>
+          <option value=".75">75%</option>
+          <option value="1" selected="selected">100%</option>
+          <option value="1.50">150%</option>
+          <option value="2.00">200%</option>
+          <option value="2.50">250%</option>
+          <option value="3.00">300%</option>
+        </select>
+        </div>
+    </section>
+    <document>
+        <page class="a4">
+            <docHeader>
+                <h1>SRP RMC & Constructions</h1>
+                <h4>RMC & Constuction</h4>
+                <p>
+                    04259286686<br />srpconstruction@gmail.com<br />www.srpconstuction.com
+                </p>
+            </docHeader>
+
+            <p>Ledger statement of :<b>Operating Revenues</b></p>
+            <table class="pageData">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Account</th>
+                        <th class="currency">Debit</th>
+                        <th class="currency">Credit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2022-01-07</td>
+                        <td>Samy Expenses</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">370.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-21</td>
+                        <td>Samy Expenses</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">700.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-28</td>
+                        <td>Samy Expenses</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">750.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-21</td>
+                        <td>Courier</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">150.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-28</td>
+                        <td>Courier</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">650.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-28</td>
+                        <td>sathish</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-06</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">500.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-20</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-24</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-21</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-27</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-29</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-03</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-06</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-10</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">250.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-11</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-11</td>
+                        <td>Food</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">350.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-18</td>
+                        <td>Pongal dress</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,000.00</td>
+                    </tr>
+
+                    <tr>
+                        <td>2022-01-06</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-08</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-18</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-19</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,400.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-27</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-04</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-12</td>
+                        <td>Pongal dress</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-20</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-22</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-24</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">500.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-03</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">230.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-09</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-09</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-17</td>
+                        <td>PC/RTO 1</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-17</td>
+                        <td>Pongal dress</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-19</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-03</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-05</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-11</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">350.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-12</td>
+                        <td>Pongal dress</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,040.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-12</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">40.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-20</td>
+                        <td>PC/RTO 2</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-27</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-07</td>
+                        <td>Samy Expenses</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">370.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-21</td>
+                        <td>Samy Expenses</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">700.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-28</td>
+                        <td>Samy Expenses</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">750.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-21</td>
+                        <td>Courier</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">150.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-28</td>
+                        <td>Courier</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">650.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-28</td>
+                        <td>sathish</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-06</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">500.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-20</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-24</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-21</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-27</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-29</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-03</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-06</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-10</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">250.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-11</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-11</td>
+                        <td>Food</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">350.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-18</td>
+                        <td>Pongal dress</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-06</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-08</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-18</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-19</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,400.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-27</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-04</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-12</td>
+                        <td>Pongal dress</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-20</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-22</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-24</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">500.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-03</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">230.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-09</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-09</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-17</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-17</td>
+                        <td>Pongal dress</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-19</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-03</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-05</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-11</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">350.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-12</td>
+                        <td>Pongal dress</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">1,040.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-12</td>
+                        <td>Other</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">40.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-20</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2022-01-27</td>
+                        <td>PC/RTO</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">300.00</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Total</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">13,980.00</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Balance</td>
+                        <td class="currency">0.00</td>
+                        <td class="currency">13,980.00</td>
+                    </tr>
+                </tbody>
+                <!--  <tfoot>
+                    <tr class="pageFooter">
+                        <td></td>
+                        <td>Total</td>
+                        <td>15,254.00</td>
+                        <td>25,516.30</td>
+                    </tr>
+                    <tr class="pageFooter">
+                        <td></td>
+                        <td>Balance</td>
+                        <td>xxx</td>
+                        <td>xxx</td>    
+                    </tr>
+                </tfoot> -->
+            </table>
+        </page>
+    </document>
+    <docNav id="documentNavigator">
+        <div>Page <span id="nav-currPage">xx</span> of <span id="nav-totalPage">xxx</span></div>
+    </docNav>
+
+    <script type="text/javascript" language="javascript" src="jquery-3.5.1.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
