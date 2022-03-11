@@ -5,7 +5,6 @@
 body {
     padding: 0;
     margin: 0;
-    display: flexbox;
 }
 
 #filterArea {
@@ -31,23 +30,30 @@ document {
     /* background-color: #98d9ff;   */
     background: linear-gradient(135deg, #ABDCFF, #4fb6ff);
     display: block;
-    padding: .5cm;
+    padding: 1.5cm .5cm;
 }
 
 page {
     border: 1px solid rgb(105, 105, 105);
     box-shadow: 2px 2px 6px rgba(112, 112, 112, 0.692);
-    display: block;
     margin: 6mm auto;
-    position: relative;
     background-color: white;
     font-size: 10pt;
+    display: inherit;
+}
+
+page.hidden {
+    display: none !important;
+}
+
+page.currentPage {
+    display: block !important;
 }
 
 page.a4 {
     width: 210mm !important;
     height: 297mm !important;
-    padding: 10mm !important;
+    padding: 15mm 10mm !important;
 }
 
 docHeader {
@@ -58,7 +64,7 @@ docHeader {
 
 table.pageData {
     width: 100%;
-    margin: 5mm 0;
+    /*  margin: 5mm 0; */
     border-spacing: 0;
 }
 
@@ -85,10 +91,6 @@ tbody tr:nth-child(even) {
     background: #efefef
 }
 
-tfoot tr:first-child {
-    margin-top: 24px;
-}
-
 td.currency,
 th.currency {
     text-align: right;
@@ -100,45 +102,88 @@ td.currency::before {
     font-size: .8rem;
 }
 
+h1 {
+    margin-top: 0;
+}
+
 docNav {
-    margin: 0 auto;
-    background-color: rgb(80, 80, 80);
-    color: white;
-    font-size: 12pt;
     position: fixed;
-    bottom: 0;
-    padding: 12px 24px;
+    bottom: 16px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+docNav #pageNavigation {
+    background-color: rgb(80, 80, 80);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 10pt;
+    width: fit-content;
+    padding: 8px;
+    margin: 0 auto;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+#pageNavigation .navAnchor a {
+    text-decoration: none;
+    color: white;
+    margin: 0 4px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    min-width: 24px;
+    display: block;
+}
+
+#pageNavigation .navAnchor a:hover {
+    background-color: rgb(119, 119, 119);
+}
+
+#navAnchorFirst a::before {
+    content: '<';
+    margin-right: -3px;
+}
+
+#navAnchorLast a::after {
+    content: '>';
+    margin-left: -3px;
+}
+
+#pageNavigation .navText {
+    margin: 0 12px;
 }
 
 @media print {
-    page.a4,
     body {
-        width: 210mm;
-        height: 297mm;
         padding: 0 !important;
-        margin: 0;
+        margin: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+    }
+    @page {
+        size: A4;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    page {
         box-shadow: none !important;
         border: none !important;
+        margin: 0 !important;
+    }
+    page.a4 {
+        width: 210mm !important;
+        height: 297mm !important;
+        padding: 15mm 10mm !important;
     }
     #filterArea {
         display: none !important;
     }
-    table {
-        page-break-after: auto;
-        table-layout: fixed;
-    }
-    tr {
-        page-break-inside: avoid;
-        page-break-after: auto
-    }
-    td {
-        page-break-inside: avoid;
-        page-break-after: auto
-    }
-    thead {
-        display: table-header-group
-    }
-    tfoot {
-        display: table-footer-group
+    tbody tr {
+        line-height: 24px !important;
     }
 }

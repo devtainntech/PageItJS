@@ -66,22 +66,11 @@
             <div class="col">From : &nbsp;<input type="date" /></div>
             <div class="col">To : &nbsp;<input type="date" /></div>
             <button type="submit">Go</button>
+
         </form>
-        <div id="zoomFactor" style="display: flex">
-            <span>zoom&nbsp;&nbsp;</span>
-            <select id="zooming" onchange="zoomings()">
-          <option value=".25">25%</option>
-          <option value=".5">50%</option>
-          <option value=".75">75%</option>
-          <option value="1" selected="selected">100%</option>
-          <option value="1.50">150%</option>
-          <option value="2.00">200%</option>
-          <option value="2.50">250%</option>
-          <option value="3.00">300%</option>
-        </select>
-        </div>
+
     </section>
-    <document>
+    <document id="document">
         <page class="a4">
             <docHeader>
                 <h1>SRP RMC & Constructions</h1>
@@ -626,11 +615,19 @@
         </page>
     </document>
     <docNav id="documentNavigator">
-        <div>Page <span id="nav-currPage">xx</span> of <span id="nav-totalPage">xxx</span></div>
+        <div id="pageNavigation">
+            <div class="navAnchor" id="navAnchorFirst"><a href="#" onclick="navToPage(0)">&lt;</a></div>
+            <div class="navAnchor"><a href="#" onclick="navToPage(1)">&lt;</a></div>
+            <div class="navText" id="pageText">Page <span id="nav-currPage">xx</span> of <span id="nav-totalPage">xxx</span></div>
+            <div class="navAnchor"><a href="#" onclick="navToPage(2)">&gt;</a> </div>
+            <div class="navAnchor" id="navAnchorLast" onclick="navToPage(3)"><a href="#">&gt;</a></div>
+            <div class="navText"><span> | </span></div>
+            <div class="navAnchor"><a href="#" onclick="printPaged()">Print</a> </div>
+        </div>
     </docNav>
 
-    <script type="text/javascript" language="javascript" src="jquery-3.5.1.js"></script>
-    <script src="script.js"></script>
+    <script type="text/javascript " language="javascript " src="jquery-3.5.1.js "></script>
+    <script src="pageIt.0.0.1.js "></script>
 </body>
 
 </html>

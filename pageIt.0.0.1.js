@@ -4,6 +4,7 @@ var totalPages = 1;
 var currPage = $('page')[currPageNo];
 var init_content = $(currPage).children().toArray();
 
+
 // blank page calc available space to add
 // remaining-space = page-inner-height;
 var remaining_space = $(currPage).height();
@@ -41,10 +42,18 @@ function pageIt(document) {
         //calc remaining space
         // after breaking or leaving as it is
         remaining_space = remaining_space - child_height;
-
     });
+
+    currPageNo = 0;
+
     $("#nav-currPage").text(currPageNo + 1);
     $("#nav-totalPage").text(totalPages);
+
+    //hide all pages
+    $('page').addClass('hidden');
+    //but show only first
+    $($('page')[0]).removeClass('hidden').addClass('currentPage');
+
 }
 
 function tableBreaker(table) {
@@ -107,13 +116,56 @@ function tableBreaker(table) {
 
 $(document).ready(function() {
     pageIt($('document'));
+
 });
-/* 
 
-function zoomings() {
-    var page = document.getElementsByClassName("currentPage")[0];
-    var val = document.getElementById("zooming").value;
 
-    //alert(val);
-    page.style.scale = val;
-} */
+
+function navToPage(page) {
+
+    var jumpPageNo = 0;
+    // change current page number
+    switch (page) {
+        case 0:
+            jumpPageNo = 0;
+            break;
+        case 1:
+            if (currPageNo > 0)
+                jumpPageNo = currPageNo - 1;
+            break;
+        case 2:
+            if (currPageNo < (totalPages - 1))
+                jumpPageNo = currPageNo + 1;
+            else
+                jumpPageNo = totalPages - 1;
+            break;
+        case 3:
+            jumpPageNo = totalPages - 1;
+            break;
+        default:
+            jumpPageNo = 0;
+            break;
+    }
+
+    $('page.currentPage').removeClass('currentPage').addClass('hidden');
+    // add visible currentPage Class to current page
+    $($('page')[jumpPageNo]).removeClass('hidden').addClass('currentPage');
+
+    //display current pagen no
+    $("#nav-currPage").text(jumpPageNo + 1);
+    currPageNo = jumpPageNo;
+}
+
+function printPaged() {
+    var originalContents = document.body.innerHTML;
+    var printContents = $('<div></div>');
+    $('page').each(function(index, value) {
+        $(this).removeClass('hidden');
+        printContents.append(value);
+    });
+
+
+    document.body.innerHTML = $(printContents).html();
+    window.print();
+    document.body.innerHTML = originalContents;
+}
